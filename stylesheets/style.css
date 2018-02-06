@@ -1,0 +1,271 @@
+/* line 4, ../sass/_headings.scss */
+h1, h2, h3, h4, h5 {
+  color: #ffffff;
+  font-size: 12px;
+  background-color: #fff;
+}
+
+/* line 9, ../sass/_headings.scss */
+h2 {
+  color: aqua;
+}
+
+/* line 13, ../sass/_headings.scss */
+h3 {
+  color: aquamarine;
+}
+
+/* line 17, ../sass/_headings.scss */
+h4 {
+  color: #000000;
+}
+
+/* line 21, ../sass/_headings.scss */
+h5 {
+  color: blue;
+}
+
+/* line 4, ../sass/style.scss */
+#main {
+  font-family: "Adobe Arabic";
+  font-size: 30px;
+  font-weight: bold;
+}
+
+/* line 20, ../sass/style.scss */
+.box {
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  -ms-border-radius: 30px;
+  border-radius: 30px;
+}
+
+/* line 24, ../sass/style.scss */
+.container {
+  width: 100%;
+}
+
+/* line 26, ../sass/style.scss */
+.cont1 {
+  float: left;
+  width: 31.25%;
+}
+
+/* line 27, ../sass/style.scss */
+.cont2 {
+  float: right;
+  width: 41.66667%;
+}
+
+/* line 30, ../sass/style.scss */
+#main {
+  width: 100%;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  border-radius: 10px;
+}
+/* line 33, ../sass/style.scss */
+#main p {
+  width: 200px;
+}
+/* line 34, ../sass/style.scss */
+#main div {
+  width: 300px;
+}
+/* line 35, ../sass/style.scss */
+#main:hover {
+  width: 500px;
+}
+/* line 36, ../sass/style.scss */
+#main-sidebar {
+  width: 900px;
+}
+
+/* line 39, ../sass/style.scss */
+.sidebar {
+  width: 300px;
+}
+@media screen and (orientation: landscape) {
+  /* line 39, ../sass/style.scss */
+  .sidebar {
+    width: 1000px;
+  }
+}
+
+/* line 57, ../sass/style.scss */
+.box1 {
+  position: relative;
+  left: 10px;
+  top: 2px;
+}
+
+/* line 60, ../sass/style.scss */
+p {
+  color: black;
+}
+
+/* line 73, ../sass/style.scss */
+.item-1 {
+  width: 3;
+}
+
+/* line 73, ../sass/style.scss */
+.item-2 {
+  width: 6;
+}
+
+/* line 73, ../sass/style.scss */
+.item-3 {
+  width: 9;
+}
+
+/* line 73, ../sass/style.scss */
+.item-4 {
+  width: 12;
+}
+
+/* line 73, ../sass/style.scss */
+.item-5 {
+  width: 15;
+}
+
+/* line 77, ../sass/style.scss */
+.animal-puma-icon {
+  background-image: url("/images/puma.png");
+}
+
+/* line 77, ../sass/style.scss */
+.animal-jagura-icon {
+  background-image: url("/images/jagura.png");
+}
+
+/* line 77, ../sass/style.scss */
+.animal-slon-icon {
+  background-image: url("/images/slon.png");
+}
+
+/* line 77, ../sass/style.scss */
+.animal-waz-icon {
+  background-image: url("/images/waz.png");
+}
+
+/* line 85, ../sass/style.scss */
+.puma-icon {
+  background-image: url("/images/puma.png");
+  border: 2px solid black;
+  cursor: default;
+}
+
+/* line 85, ../sass/style.scss */
+.sea-slug-icon {
+  background-image: url("/images/sea-slug.png");
+  border: 2px solid blue;
+  cursor: pointer;
+}
+
+/* line 85, ../sass/style.scss */
+.egret-icon {
+  background-image: url("/images/egret.png");
+  border: 2px solid white;
+  cursor: move;
+}
+
+/* line 94, ../sass/style.scss */
+.item-6 {
+  width: 12em;
+}
+
+/* line 94, ../sass/style.scss */
+.item-4 {
+  width: 8em;
+}
+
+/* line 94, ../sass/style.scss */
+.item-2 {
+  width: 4em;
+}
+
+/* line 110, ../sass/style.scss */
+.box2 {
+  display: inline-block;
+}
+/* line 100, ../sass/style.scss */
+.box2:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+/* line 107, ../sass/style.scss */
+* html .box2 {
+  height: 1px;
+}
+
+/* line 122, ../sass/style.scss */
+.page-title {
+  padding: 4px;
+  margin-top: 10px;
+}
+/* line 113, ../sass/style.scss */
+.page-title a {
+  font-family: Arial;
+  font-size: 20px;
+  font-weight: bold;
+  color: #ff0000;
+}
+
+/* line 113, ../sass/style.scss */
+a {
+  font-family: Arial;
+  font-size: 20px;
+  font-weight: bold;
+  color: #ff0000;
+}
+
+/* line 139, ../sass/style.scss */
+.box4 {
+  background-color: #fc0;
+  font-size: 20px;
+}
+
+/* line 150, ../sass/style.scss */
+p {
+  border-color: blue;
+  border-width: 1in;
+  border-style: dashed;
+}
+
+/* line 151, ../sass/style.scss */
+h6 {
+  border-color: blue;
+  border-width: 2in;
+  border-style: dashed;
+}
+
+/* line 159, ../sass/style.scss */
+.shadows {
+  -moz-box-shadow: 0px 4px 5px #666, 2px 6px 10px #999;
+  -webkit-box-shadow: 0px 4px 5px #666, 2px 6px 10px #999;
+  box-shadow: 0px 4px 5px #666, 2px 6px 10px #999;
+}
+
+/* line 170, ../sass/style.scss */
+.primary {
+  color: #ff0000;
+  background-color: #00ff00;
+  border-color: #0000ff;
+}
+
+/* line 175, ../sass/style.scss */
+.secondary {
+  color: #00ff00;
+  background-color: #0000ff;
+  border-color: #ff0000;
+}
+
+/* line 188, ../sass/style.scss */
+#sidebar {
+  width: 240px;
+}
