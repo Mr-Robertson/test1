@@ -1,0 +1,24 @@
+$bg-color: #fff;
+$f-size: 12px;
+
+h1 {
+  color: #ffffff ;
+  font-size: $f-size;
+  background-color: $bg-color;
+  }
+h2 {
+  @extend h1;
+  color: aqua;
+}
+h3 {
+  @extend h1;
+  color: aquamarine;
+}
+h4 {
+  @extend h1;
+  color: #000000;
+}
+h5 {
+  @extend h1;
+  color: blue;
+}

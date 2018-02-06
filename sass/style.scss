@@ -1,21 +1,188 @@
+@import "headings";
 
 
-$bg-color: #fff;
-$f-size: 12px;
+%fontcostam {
+  font: {
+    family: "Adobe Arabic";
+    size:  30px;
+    weight: bold;
+  }
+}
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
 
 
-h1 {
-  color: $bg-color ;
+.box { @include border-radius(10px);}
+
+
+
+.container {width: 100%;}
+
+.cont1 {float: left; width: 300 / 960 *100%;}
+.cont2 {float: right; width: 400 / 960 * 100%;}
+
+
+#main {
+  @extend %fontcostam;
+  width: 100%;
+  p { width: 200px;}
+  div { width: 300px;}
+  &:hover {width: 500px;}
+  &-sidebar {width: 900px;}
+  @include border-radius(10px);
 }
-h2 {
-font-size: $f-size;
+.sidebar {
+  width: 300px;
+  @media screen and (orientation: landscape){
+    width: 1000px;
+  }
+
 }
-h3 {
-  background-color: $bg-color;
+
+@mixin adjust-location($x, $y) {
+  @if unitless($x) {
+    @error "$x may not be unitless, was #{$x}.";
+  }
+  @if unitless($y) {
+    @error "$y may not be unitless, was #{$y}.";
+  }
+  position: relative; left: $x; top: $y;
 }
-h4 {
-  color: $bg-color;
+
+.box1 {@include adjust-location(10px,2px)}
+
+$type: mo;
+p {
+  @if $type == ocean {
+    color: blue;
+  } @else if $type == matador {
+    color: red;
+  } @else if $type == monster {
+    color: green;
+  } @else {
+    color: black;
+  }
 }
-h5 {
-  color: $bg-color;
+
+@for $i from 1 through 5 {
+  .item-#{$i} {width: $i * 3;}
 }
+
+@each $animals in puma, jagura, slon, waz {
+  .animal-#{$animals}-icon {
+    background-image: url("/images/#{$animals}.png");
+      }
+}
+
+@each $animal, $color, $cursor in (puma, black, default),
+        (sea-slug, blue, pointer),
+        (egret, white, move) {
+  .#{$animal}-icon {
+    background-image: url('/images/#{$animal}.png');
+    border: 2px solid $color;
+    cursor: $cursor;
+  }
+}
+
+$i: 6;
+@while $i > 0 {
+  .item-#{$i} { width: 2em * $i; }
+  $i: $i - 2;
+}
+
+@mixin clearfix {
+  display: inline-block;
+  &:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+  }
+  * html & { height: 1px }
+}
+
+.box2 {@include clearfix;}
+
+@mixin large-text {
+  a {
+  font: {
+    family: Arial;
+    size: 20px;
+    weight: bold;
+  }
+  color: #ff0000;
+}}
+
+.page-title {
+  @include large-text;
+  padding: 4px;
+  margin-top: 10px;
+}
+
+@include large-text;
+
+
+@mixin compound {
+  @include highlighted-background;
+  @include header-text;
+}
+
+@mixin highlighted-background { background-color: #fc0; }
+@mixin header-text { font-size: 20px; }
+
+.box4 {
+  @include compound;
+}
+
+@mixin sexy-border($color, $width: 1in) {
+  border: {
+    color: $color;
+    width: $width;
+    style: dashed;
+  }
+}
+p { @include sexy-border(blue); }
+h6 { @include sexy-border(blue, 2in); }
+
+@mixin box-shadow($shadows...) {
+  -moz-box-shadow: $shadows;
+  -webkit-box-shadow: $shadows;
+  box-shadow: $shadows;
+}
+
+.shadows {
+  @include box-shadow(0px 4px 5px #666, 2px 6px 10px #999);
+}
+
+@mixin colors($text, $background, $border) {
+  color: $text;
+  background-color: $background;
+  border-color: $border;
+}
+
+$values: #ff0000, #00ff00, #0000ff;
+.primary {
+  @include colors($values...);
+}
+
+$value-map: (text: #00ff00, background: #0000ff, border: #ff0000);
+.secondary {
+  @include colors($value-map...);
+}
+
+
+
+$grid-width: 40px;
+$gutter-width: 10px;
+
+@function grid-width($n) {
+  @return $n * $grid-width + ($n - 1) * $gutter-width;
+}
+
+#sidebar { width: grid-width(5); }
