@@ -95,7 +95,7 @@ $i: 6;
   $i: $i - 2;
 }
 
-@mixin clearfix {
+@mixin clearfixor {
   display: inline-block;
   &:after {
     content: ".";
@@ -107,7 +107,7 @@ $i: 6;
   * html & { height: 1px }
 }
 
-.box2 {@include clearfix;}
+.box2 {@include clearfixor;}
 
 @mixin large-text {
   a {
@@ -182,4 +182,59 @@ $gutter-width: 10px;
   @return $n * $grid-width + ($n - 1) * $gutter-width;
 }
 
-#sidebar { width: grid-width(5); }
+#sidebar {
+  width: grid-width(5);
+}
+
+#costam {
+  width: 40%;
+  height: 40%;
+  float: left;
+  margin: 10%;
+  @include clearfix;
+}
+.gradient-example {
+  width: 180px;
+  height: 180px;
+  background: red;
+  float: left;
+  margin: 20px 20px 20px 20px;
+  }
+#radial-gradient {
+  @include background-image(radial_gradient(40px 80px, red, blue));
+}
+#linear-gradient {
+  @include  background-image(_linear_gradient(to bottom right, white, #dddccc));
+}
+#v-gradient {
+  @include  background-image(linear-gradient(-45deg, red, blue));
+
+}
+#v-gradient-1 {
+  @include background-image(linear-gradient(0deg, blue, green 40%, red));
+
+
+}
+
+.simple-box-shadow {
+  @include single-box-shadow;
+}
+.multi-box-shadow {
+  @include  box-shadow(-1px 1px 15px 5px blue, 1px 1px 5px 5px red, 1px 1px 15px 15px green );
+}
+
+.opacity-example {
+  background: red;
+  width: 40px;
+  height: 40px;
+  float: left;
+}
+
+@for $i from 1 through 10 {
+
+  $y: $i/10;
+
+  #opacity-#{$i} {
+    @include opacity($y);
+  }
+}
