@@ -48,5 +48,5 @@ function liczElementy() {
 
 
 
-
+// todo zrobic cos w JS
 
